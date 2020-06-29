@@ -23,10 +23,25 @@ img{
 .nav-container{
 background: transparent;
 border-color: transparent;
+margin-right: 10vh;
+}
+.brand{
+    margin-left: 10vh;
+}
+.links{
+    border-bottom:3px solid #fff;
+}
+.links:hover{
+    border-bottom:3px solid #007bff;
+}
+.links :link{
+    text-decoration: none;
 }
 @media only screen and (max-width: 800px) {
     .caption{
         bottom:10%;
     }
-
+    .nav-container{
+        margin-right: 0;
+    }
 }
