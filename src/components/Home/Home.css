@@ -44,4 +44,7 @@ margin-right: 10vh;
     .nav-container{
         margin-right: 0;
     }
+    .brand{
+        margin-left: 0;
+    }
 }
