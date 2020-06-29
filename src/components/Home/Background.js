@@ -13,7 +13,6 @@ function Background() {
         controls={false}
         indicators={false}
         pause={false}
-        fade={true}
         >
             <Carousel.Item>
                 <img

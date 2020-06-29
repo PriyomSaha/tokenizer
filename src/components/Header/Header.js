@@ -13,7 +13,7 @@ function Header() {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto"/>
-                <Nav className="text-right">
+                <Nav className="text-center">
                     <Nav.Link href="#" className="text-light">Home</Nav.Link>
                     <NavDropdown title="Shop Type" id="collasible-nav-dropdown" className="text-light">
                         <NavDropdown.Item className="text-center">Fast Food</NavDropdown.Item>
