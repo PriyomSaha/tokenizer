@@ -16,7 +16,7 @@ function Background() {
                     src={img1}
                     alt="First slide"
                 />
-                <Carousel.Caption className="caption">
+                <Carousel.Caption className="caption h-50">
                     <h3>We Aim Towards <span style={{color:'#edbb00'}}>Covid Free World</span></h3>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -26,7 +26,7 @@ function Background() {
                     src={img2}
                     alt="Third slide"
                 />
-                <Carousel.Caption className="caption">
+                <Carousel.Caption className="caption h-50">
                     <h3>We Provide <span style={{color:'#edbb00'}}>Hassle Free Buying</span></h3>
                 </Carousel.Caption>
             </Carousel.Item>
@@ -36,7 +36,7 @@ function Background() {
                     src={img3}
                     alt="Third slide"
                 />
-                <Carousel.Caption className="caption">
+                <Carousel.Caption className="caption h-50">
                     <h3>Register Your Shop and <span style={{color:'#edbb00'}}>get free Boost Credit</span></h3>
                 </Carousel.Caption>
             </Carousel.Item>

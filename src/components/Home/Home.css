@@ -9,7 +9,6 @@ img{
     filter: brightness(20%); 
 }
 .caption{
-    padding-bottom: 250px;
     text-shadow: 4px 4px 2px black;
 }
 .form-container
