@@ -5,7 +5,7 @@ function Login({ show, setShow }) {
 
     const handleClose = () => setShow(false);
     return (
-        <Modal show={show} onHide={handleClose} centered={true} >
+        <Modal show={show} onHide={handleClose} centered={true}>
             <Modal.Header closeButton>
                 <Modal.Title>
                     <Tabs defaultActiveKey="Customer" id="uncontrolled-tab-example">
