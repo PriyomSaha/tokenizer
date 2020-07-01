@@ -71,7 +71,7 @@ function FormCustomer() {
             </Form.Group>
 
             <Form.Row>
-                <Form.Group className="col-md-6" controlId="formGridmobileNumber">
+                <Form.Group className="col-sm-6" controlId="formGridmobileNumber">
                     <Form.Label>Mobile Number</Form.Label>
                     <InputGroup>
                         <InputGroup.Prepend>
@@ -81,7 +81,7 @@ function FormCustomer() {
                     </InputGroup>
                 </Form.Group>
 
-                <Form.Group className="col-md-6" controlId="formGridUsername">
+                <Form.Group className="col-sm-6" controlId="formGridUsername">
                     <Form.Label>User Name</Form.Label>
                     <InputGroup>
                         <InputGroup.Prepend>
@@ -93,12 +93,12 @@ function FormCustomer() {
             </Form.Row>
 
             <Form.Row>
-                <Form.Group className="col-md-6" controlId="formGridEmail">
+                <Form.Group className="col-sm-6" controlId="formGridEmail">
                     <Form.Label>Email</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" />
                 </Form.Group>
 
-                <Form.Group className="col-md-6" controlId="formGridPassword">
+                <Form.Group className="col-sm-6" controlId="formGridPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type={passwordType} placeholder="Password" />
                     <span className="togglePassword" onClick={passwordToggle}><b>{passwordToggleText}</b></span>
@@ -106,17 +106,17 @@ function FormCustomer() {
             </Form.Row>
 
             <Form.Row>
-                <Form.Group className="col-md-7" controlId="formGridCity">
+                <Form.Group className="col-sm-7" controlId="formGridCity">
                     <Form.Label>City</Form.Label>
-                    <Form.Control placeholder="Click The Icon To locate" value={city} readOnly />
+                    <Form.Control placeholder="Click the icon to Locate" value={city} readOnly />
                     <span className="location" onClick={getLocation}>
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-geo-alt" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fillRule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
                         </svg>
                     </span>
                 </Form.Group>
 
-                <Form.Group className="col-md-5" controlId="formGridZip">
+                <Form.Group className="col-sm-5" controlId="formGridZip">
                     <Form.Label>Zip</Form.Label>
                     <Form.Control type="number" placeholder="Enter Pin-code" />
                 </Form.Group>
