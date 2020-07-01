@@ -9,8 +9,14 @@ function FormCustomer() {
     const [longitude, setLongitude] = useState(0);
 
     const [city, setCity] = useState("");
-
+    const [change, setChange] = useState(false)
     const getLocation = () => {
+
+        if (!change){
+            setCity("Loading...")
+            setChange(true)
+        }
+
         navigator.geolocation.getCurrentPosition((position) => {
             setLatitude(position.coords.latitude);
             setLongitude(position.coords.longitude);
@@ -41,7 +47,7 @@ function FormCustomer() {
             .catch((error) => {
                 console.log(error)
             })
-    }, [axios,latitude,longitude])
+    }, [axios, latitude, longitude])
 
     //password Toogle
     const [passwordType, setPasswordType] = useState('password');
@@ -102,7 +108,7 @@ function FormCustomer() {
             <Form.Row>
                 <Form.Group className="col-md-7" controlId="formGridCity">
                     <Form.Label>City</Form.Label>
-                    <Form.Control placeholder="Click The Icon To locate" value={city} />
+                    <Form.Control placeholder="Click The Icon To locate" value={city} readOnly />
                     <span className="location" onClick={getLocation}>
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />

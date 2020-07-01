@@ -5,12 +5,6 @@ import './Signup.css'
 import FormCustomer from './FormCustomer'
 
 function Signup({ show, setShow }) {
-    /*const getLocation = ()=>{
-        navigator.geolocation.getCurrentPosition((position)=>{
-            console.log("latitude"+position.coords.latitude);
-            console.log("longitude"+position.coords.longitude);
-            });
-    }*/
     const handleClose = () => setShow(false);
     return (
         <Modal show={show} onHide={handleClose} centered={true} >
