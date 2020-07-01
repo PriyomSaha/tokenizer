@@ -72,8 +72,8 @@ function FormCustomer() {
     const [focus, setFocus] = useState(false)
     const [show, setShow] = useState(false)
     const [text, setText] = useState('')
-    var valiadtionTestCount = 0
     useEffect(() => {
+        var valiadtionTestCount = 0;
         if (focus === true) {
             if (password.length === 0) {
                 setShow(true)
@@ -100,8 +100,8 @@ function FormCustomer() {
                     if (password.match(numbers))
                         valiadtionTestCount += 1
 
-                    var symbol = /[ `!@#$%^&*()_+\-=[\]{};':"\\|,.<>\/?~]/;
-                    if (symbol.test(password))
+                    var symbol =/^[a-zA-Z0-9!@#$%^&*)(+=._-]{6,}$/g;
+                    if (symbol.match(password))
                         valiadtionTestCount += 1
 
                 }())
