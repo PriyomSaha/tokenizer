@@ -41,9 +41,7 @@ function FormCustomer() {
             .catch((error) => {
                 console.log(error)
             })
-        console.log(latitude, longitude);
-
-    }, [latitude,longitude])
+    }, [axios,latitude,longitude])
 
     //password Toogle
     const [passwordType, setPasswordType] = useState('password');
