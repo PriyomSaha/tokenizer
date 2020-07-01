@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { Modal, Button, Tabs, Tab } from 'react-bootstrap'
 
 import './Signup.css'
@@ -11,16 +11,6 @@ function Signup({ show, setShow }) {
             console.log("longitude"+position.coords.longitude);
             });
     }*/
-    const [latitude,setLatitude] = useState(0.0) ;
-    const [longitude,setLongitude] = useState(0.0) ;
-    const getLocation = ()=>{
-        navigator.geolocation.getCurrentPosition((position)=>{
-            var lat = position.coords.latitude;
-            var long = position.coords.longitude;
-            setLatitude(lat);
-            setLongitude(long);
-            });
-    }
     const handleClose = () => setShow(false);
     return (
         <Modal show={show} onHide={handleClose} centered={true} >
@@ -39,11 +29,8 @@ function Signup({ show, setShow }) {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Footer>
-                <Button variant="primary" block={true} onClick={getLocation}>Sign Up</Button>
+                <Button variant="primary" block={true}>Sign Up</Button>
             </Modal.Footer>
-            Latitude = {latitude}
-            <br/>
-            Longitude = {longitude}
         </Modal>
     )
 }

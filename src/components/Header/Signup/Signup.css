@@ -3,7 +3,7 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
-.togglePassword{
+.togglePassword , .location{
   position: absolute;
   top: 65%;
   right: 1rem;
