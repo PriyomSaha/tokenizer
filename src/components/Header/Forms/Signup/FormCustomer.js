@@ -78,8 +78,7 @@ function FormCustomer() {
             if (password.length === 0) {
                 setShow(true)
                 setcolor('#343a40')//gray
-                setText('Strong Password is a combination of CapitalLetters, SmallLetters, Numbers and Symbols .')
-
+                setText('Strong Password is a combination of CapitalLetters, SmallLetters, Numbers and Symbols.')
             }
             else if (password.length > 0 && password.length < 6) {
                 setShow(true)
