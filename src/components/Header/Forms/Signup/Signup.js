@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Button, Tabs, Tab } from 'react-bootstrap'
+import { Modal, Tabs, Tab } from 'react-bootstrap'
 
 import './Signup.css'
 import FormCustomer from './FormCustomer'
@@ -13,7 +13,7 @@ function Signup({ show, setShow }) {
                     <Tabs defaultActiveKey="Customer" id="uncontrolled-tab-example">
                         <Tab eventKey="Customer" title="Customer">
                             <Modal.Body>
-                                <FormCustomer />
+                                <FormCustomer /> {/* Customer Signup Form */}
                             </Modal.Body>
                         </Tab>
                         <Tab eventKey="Shop" title="Shop">
@@ -22,9 +22,6 @@ function Signup({ show, setShow }) {
                     </Tabs>
                 </Modal.Title>
             </Modal.Header>
-            <Modal.Footer>
-                <Button variant="primary" block={true}>Sign Up</Button>
-            </Modal.Footer>
         </Modal>
     )
 }

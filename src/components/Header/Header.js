@@ -1,8 +1,8 @@
 import React,{useState} from 'react'
 import {Link} from 'react-router-dom'
 import { Navbar, Nav, NavDropdown} from 'react-bootstrap'
-import Login from './Login/Login';
-import Signup from './Signup/Signup';
+import Login from './Forms/Login/Login';
+import Signup from './Forms/Signup/Signup';
 
 
 function Header() {
