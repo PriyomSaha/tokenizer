@@ -99,8 +99,8 @@ function FormCustomer() {
                     if (password.match(numbers))
                         valiadtionTestCount += 1
 
-                    var symbol =/^[a-zA-Z0-9!@#$%^&*)(+=._-]{6,}$/g;
-                    if (symbol.match(password))
+                    var symbol = /[ `!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/;
+                    if (symbol.test(password))
                         valiadtionTestCount += 1
 
                 }())
