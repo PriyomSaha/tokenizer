@@ -113,6 +113,9 @@ function FormCustomer() {
                     <Form.Control type="number" placeholder="Enter Pin-code" />
                 </Form.Group>
             </Form.Row>
+            {latitude}
+            <br/>
+            {longitude}
         </Form>
     )
 }
