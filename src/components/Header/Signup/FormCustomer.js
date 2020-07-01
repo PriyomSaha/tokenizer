@@ -12,14 +12,17 @@ function FormCustomer() {
     const [change, setChange] = useState(false)
     const getLocation = () => {
 
-        if (!change){
+        if (!change) {
             setCity("Loading...")
             setChange(true)
         }
 
         navigator.geolocation.getCurrentPosition((position) => {
-            setLatitude(position.coords.latitude);
-            setLongitude(position.coords.longitude);
+
+            setTimeout(() => {
+                setLatitude(position.coords.latitude);
+                setLongitude(position.coords.longitude);
+            }, 3000);
         });
     }
 
