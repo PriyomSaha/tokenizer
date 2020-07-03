@@ -13,7 +13,7 @@ function Alert({color,text}) {
     
     return (
         <>
-            <small style={style}><b>{text}</b></small>
+            <small style={style} className='pt-1'><b>{text}</b></small>
         </>
     )
 }
