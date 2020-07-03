@@ -153,7 +153,7 @@ function FormCustomer() {
     var errorMsg = ''
 
     const validate = () => {
-        if (mobile.length != 10) {
+        if (mobile.length !== 10) {
             error = true
             errorMsg ="Mobile Number"
             setMobile("")
