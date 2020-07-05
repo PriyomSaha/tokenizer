@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Form, InputGroup, Modal, Button } from 'react-bootstrap'
 import Alert from './Alert'
 
-import * as emailjs from 'emailjs-com'
 import { firebaseApp } from "../../../../firebase"
 
 function FormCustomer() {
@@ -353,7 +352,7 @@ function FormCustomer() {
                 </Form.Row>
             </Form>
             <Modal.Footer className="pt-2">
-                <Button variant="primary" block={true} onClick={/*storeToDatabase*/sendingMail}>Sign Up</Button>
+                <Button variant="primary" block={true} onClick={storeToDatabase/*sendingMail*/}>Sign Up</Button>
             </Modal.Footer>
         </>
     )
