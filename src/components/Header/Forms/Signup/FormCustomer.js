@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Form, InputGroup, Modal, Button } from 'react-bootstrap'
 import Alert from './Alert'
+
+import * as emailjs from 'emailjs-com'
 import { firebaseApp } from "../../../../firebase"
 
 function FormCustomer() {
@@ -152,10 +154,10 @@ function FormCustomer() {
     var error = false
     var errorMsg = ''
 
-    const validate = () => {
+    const validate = async () => {
         if (mobile.length !== 10) {
             error = true
-            errorMsg ="Mobile Number"
+            errorMsg = "Mobile Number"
             setMobile("")
         }
         var mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
@@ -168,21 +170,35 @@ function FormCustomer() {
             }
             setEamil("")
         }
-
-        if(error === true){
-            alert("Invalid " + errorMsg);
-            error = false
+        if (error === true) {
+            await alert("Invalid " + errorMsg);
             errorMsg = ''
+            return null;
         }
     }
-    const storeToDatabae = async () => {
-        if(name.length === 0 || email.length === 0 || mobile.length === 0 ||
-            uName.length === 0 || zip.length ===0 ){
+    var nameForDb;
+    const FormatData = async () => {
+        var str = name.toLowerCase();
+        var array1 = str.split(' ');
+        var newarray1 = [];
 
-                alert("You need to fill all the fields");
-                return;
-            }
-            
+        for (var x = 0; x < array1.length; x++) {
+            newarray1.push(array1[x].charAt(0).toUpperCase() + array1[x].slice(1));
+        }
+        nameForDb = newarray1.join(' ');
+
+    }
+
+
+    const storeToDatabase = async () => {
+        if (name.length === 0 || email.length === 0 || mobile.length === 0 ||
+            uName.length === 0 || zip.length === 0) {
+
+            alert("You need to fill all the fields");
+            return null;
+        }
+        await FormatData()//Format data -> Name First character Caps
+
         await validate(); //Mobile Number length and email validation
 
         //If Mobile and Email format are correct check if the same data occurs in DB 
@@ -229,7 +245,7 @@ function FormCustomer() {
                 .firestore()
                 .collection('userProfile/')
                 .add({
-                    Full_Name: name,
+                    Full_Name: nameForDb,
                     User_name: uName,
                     E_mail: email,
                     Mobile: mobile,
@@ -237,19 +253,33 @@ function FormCustomer() {
                     Zip: zip,
                     City: city
                 })
+            setEamil("")
+            setName("")
+            setPassword("")
+            setuName("")
+            setZip("")
+            setCity("")
+            setMobile("")
+
+            sendingMail();
         }
 
         else {
-            alert(errorMsg + " Already Present");
+            if (errorMsg.length !== 0) {
+                alert(errorMsg + " Already Present");
+                errorMsg = ''
+            }
             error = false
-            errorMsg = ''
         }
-
     }
 
+    const sendingMail = async () => {
+
+
+    }
     return (
         <>
-            <Form>
+            <Form className="form-mail">
                 <Form.Group controlId="formGridName">
                     <Form.Label>Full Name</Form.Label>
                     <Form.Control type="name" placeholder="Enter your name"
@@ -264,7 +294,7 @@ function FormCustomer() {
                                 <InputGroup.Text>@</InputGroup.Text>
                             </InputGroup.Prepend>
                             <Form.Control type="uname" placeholder="username"
-                                value={uName} onChange={e => setuName(e.target.value)} />
+                                value={uName} onChange={e => setuName(e.target.value.toLowerCase())} />
                         </InputGroup>
                     </Form.Group>
 
@@ -284,7 +314,7 @@ function FormCustomer() {
                     <Form.Group className="col-sm-6" controlId="formGridEmail">
                         <Form.Label>Email</Form.Label>
                         <Form.Control type="email" placeholder="Enter email"
-                            value={email} onChange={e => setEamil(e.target.value)} />
+                            value={email} onChange={e => setEamil(e.target.value.toLowerCase())} />
                     </Form.Group>
 
                     <Form.Group className="col-sm-6" controlId="formGridPassword">
@@ -323,7 +353,7 @@ function FormCustomer() {
                 </Form.Row>
             </Form>
             <Modal.Footer className="pt-2">
-                <Button variant="primary" block={true} onClick={storeToDatabae}>Sign Up</Button>
+                <Button variant="primary" block={true} onClick={/*storeToDatabase*/sendingMail}>Sign Up</Button>
             </Modal.Footer>
         </>
     )
